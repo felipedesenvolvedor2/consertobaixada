@@ -1,161 +1,1208 @@
-
-
-
- <!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vicen-tecmaq - Conserto de Máquinas e Marido de Aluguel</title>
-    <!-- Inclui o Tailwind CSS para estilização rápida e responsiva -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f0f4f8; /* Cor de fundo suave */
-        }
-    </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- SEO Meta Tags -->
+  <title>Diagnóstico Grátis de Máquina de Lavar | Orçamento em 5 Minutos</title>
+  <meta name="description"
+    content="Sua máquina de lavar quebrou? Diagnóstico GRÁTIS em 5 minutos. Descubra se o reparo é simples ou complexo e receba orçamento instantâneo no WhatsApp. Atendimento imediato!" />
+  <meta name="keywords"
+    content="conserto máquina de lavar, diagnóstico grátis, orçamento reparo, assistência técnica, técnico máquina lavar" />
+  <meta name="author" content="Diagnóstico Rápido" />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Diagnóstico Grátis de Máquina de Lavar em 5 Minutos" />
+  <meta property="og:description"
+    content="Descubra o problema da sua máquina e receba orçamento instantâneo no WhatsApp!" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- JSON-LD Schema for SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "Diagnóstico Rápido de Máquina de Lavar",
+    "description": "Serviço gratuito de diagnóstico de problemas em máquinas de lavar com orçamento instantâneo",
+    "provider": {
+      "@type": "LocalBusiness",
+      "name": "Diagnóstico Rápido"
+    },
+    "areaServed": "BR",
+    "availableChannel": {
+      "@type": "ServiceChannel",
+      "serviceUrl": "https://wa.me/5511980375558"
+    }
+  }
+  </script>
+
+  <style>
+    /* ========================================
+       VARIÁVEIS E RESET
+       ======================================== */
+    :root {
+      --primary: #0066FF;
+      --primary-dark: #0052CC;
+      --secondary: #10B981;
+      --accent: #F59E0B;
+      --danger: #EF4444;
+      --bg-primary: #FFFFFF;
+      --bg-secondary: #F8FAFC;
+      --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      --text-primary: #0F172A;
+      --text-secondary: #475569;
+      --text-muted: #64748B;
+      --border: #E2E8F0;
+      --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+      --radius: 16px;
+      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--bg-secondary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ========================================
+       TIPOGRAFIA
+       ======================================== */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--text-primary);
+    }
+
+    h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    h2 {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      margin-bottom: 1rem;
+    }
+
+    h3 {
+      font-size: clamp(1.25rem, 3vw, 1.75rem);
+      margin-bottom: 0.75rem;
+    }
+
+    h4 {
+      font-size: 1.125rem;
+      font-weight: 600;
+    }
+
+    p {
+      color: var(--text-secondary);
+      font-size: 1.0625rem;
+      line-height: 1.7;
+    }
+
+    /* ========================================
+       CONTAINER E LAYOUT
+       ======================================== */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .section {
+      padding: 80px 0;
+    }
+
+    @media (max-width: 768px) {
+      .section {
+        padding: 48px 0;
+      }
+    }
+
+    /* ========================================
+       HEADER / HERO
+       ======================================== */
+    .hero {
+      background: var(--bg-gradient);
+      padding: 120px 0 100px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+      opacity: 0.4;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .hero h1 {
+      color: #FFFFFF;
+      margin-bottom: 24px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.125rem, 2.5vw, 1.375rem);
+      color: rgba(255, 255, 255, 0.95);
+      margin-bottom: 40px;
+      font-weight: 500;
+      line-height: 1.6;
+    }
+
+    .trust-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(10px);
+      padding: 12px 24px;
+      border-radius: 100px;
+      color: #FFFFFF;
+      font-size: 0.9375rem;
+      font-weight: 500;
+      margin-bottom: 32px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    /* ========================================
+       BOTÕES
+       ======================================== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 18px 40px;
+      font-size: 1.0625rem;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 12px;
+      transition: var(--transition);
+      cursor: pointer;
+      border: none;
+      font-family: inherit;
+      white-space: nowrap;
+      box-shadow: var(--shadow-md);
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: #FFFFFF;
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .btn-primary:active {
+      transform: translateY(0);
+    }
+
+    .btn-white {
+      background: #FFFFFF;
+      color: var(--primary);
+    }
+
+    .btn-white:hover {
+      background: #F8FAFC;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .btn-success {
+      background: var(--secondary);
+      color: #FFFFFF;
+    }
+
+    .btn-success:hover {
+      background: #059669;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-lg);
+    }
+
+    .btn-icon {
+      font-size: 1.25rem;
+    }
+
+    .cta-group {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      margin-top: 32px;
+    }
+
+    /* ========================================
+       FORMULÁRIO
+       ======================================== */
+    .form-group {
+      margin-bottom: 24px;
+    }
+
+    .form-label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--text-primary);
+      font-size: 0.9375rem;
+    }
+
+    .form-label .required {
+      color: var(--danger);
+      margin-left: 4px;
+    }
+
+    .form-input,
+    .form-select,
+    .form-textarea {
+      width: 100%;
+      padding: 14px 16px;
+      font-size: 1rem;
+      font-family: inherit;
+      border: 2px solid var(--border);
+      border-radius: 8px;
+      transition: var(--transition);
+      background: var(--bg-primary);
+      color: var(--text-primary);
+    }
+
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.1);
+    }
+
+    .form-textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-hint {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      margin-top: 6px;
+      display: block;
+    }
+
+    .form-error {
+      color: var(--danger);
+      font-size: 0.875rem;
+      margin-top: 6px;
+      display: none;
+    }
+
+    .form-error.active {
+      display: block;
+    }
+
+    /* ========================================
+       CARDS
+       ======================================== */
+    .card {
+      background: var(--bg-primary);
+      border-radius: var(--radius);
+      padding: 32px;
+      box-shadow: var(--shadow-md);
+      transition: var(--transition);
+      border: 1px solid var(--border);
+    }
+
+    .card:hover {
+      box-shadow: var(--shadow-xl);
+      transform: translateY(-4px);
+    }
+
+    .card-icon {
+      font-size: 3rem;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--text-primary);
+    }
+
+    .card-description {
+      color: var(--text-secondary);
+      font-size: 0.9375rem;
+      line-height: 1.6;
+    }
+
+    /* ========================================
+       GRID DE CATEGORIAS
+       ======================================== */
+    .categories-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin: 48px 0;
+    }
+
+    .category-card {
+      background: var(--bg-primary);
+      border-radius: var(--radius);
+      padding: 28px;
+      border-left: 5px solid;
+      transition: var(--transition);
+      box-shadow: var(--shadow-sm);
+      cursor: pointer;
+    }
+
+    .category-card:hover {
+      box-shadow: var(--shadow-lg);
+      transform: translateX(4px);
+    }
+
+    .category-card.simple {
+      border-color: var(--secondary);
+    }
+
+    .category-card.intermediate {
+      border-color: var(--accent);
+    }
+
+    .category-card.complex {
+      border-color: #F97316;
+    }
+
+    .category-card.urgent {
+      border-color: var(--danger);
+    }
+
+    .category-card.selected {
+      border-width: 3px;
+      box-shadow: var(--shadow-xl);
+    }
+
+    .category-icon {
+      font-size: 2.5rem;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .category-title {
+      font-size: 1.125rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .category-description {
+      color: var(--text-secondary);
+      font-size: 0.9375rem;
+    }
+
+    .category-time {
+      display: inline-block;
+      margin-top: 12px;
+      padding: 6px 12px;
+      background: var(--bg-secondary);
+      border-radius: 6px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+
+    /* ========================================
+       COMO FUNCIONA (STEPS)
+       ======================================== */
+    .steps {
+      background: var(--bg-primary);
+    }
+
+    .steps-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 40px;
+      margin-top: 48px;
+    }
+
+    .step {
+      text-align: center;
+      position: relative;
+    }
+
+    .step-number {
+      width: 64px;
+      height: 64px;
+      background: var(--bg-gradient);
+      color: #FFFFFF;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.75rem;
+      font-weight: 800;
+      margin: 0 auto 20px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .step-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .step-description {
+      color: var(--text-secondary);
+    }
+
+    /* ========================================
+       CTA SECTION (STICKY SIDEBAR)
+       ======================================== */
+    .main-content {
+      display: grid;
+      grid-template-columns: 1fr 400px;
+      gap: 40px;
+      align-items: start;
+    }
+
+    @media (max-width: 992px) {
+      .main-content {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .sticky-cta {
+      position: sticky;
+      top: 24px;
+    }
+
+    .cta-card {
+      background: var(--bg-gradient);
+      border-radius: var(--radius);
+      padding: 40px 32px;
+      color: #FFFFFF;
+      text-align: center;
+      box-shadow: var(--shadow-xl);
+    }
+
+    .cta-card h3 {
+      color: #FFFFFF;
+      margin-bottom: 16px;
+      font-size: 1.75rem;
+    }
+
+    .cta-card p {
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 24px;
+      font-size: 1rem;
+    }
+
+    .urgency-text {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 12px;
+      border-radius: 8px;
+      margin-top: 20px;
+      font-size: 0.9375rem;
+      font-weight: 500;
+    }
+
+    .whatsapp-info {
+      margin-top: 24px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .whatsapp-info p {
+      font-size: 0.875rem;
+      margin-bottom: 12px;
+    }
+
+    .whatsapp-btn {
+      background: #25D366;
+      color: #FFFFFF;
+      padding: 14px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 600;
+      transition: var(--transition);
+    }
+
+    .whatsapp-btn:hover {
+      background: #20BA5A;
+      transform: scale(1.05);
+    }
+
+    /* ========================================
+       BENEFÍCIOS / FEATURES
+       ======================================== */
+    .benefits {
+      background: var(--bg-secondary);
+    }
+
+    .benefits-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 32px;
+      margin-top: 48px;
+    }
+
+    .benefit {
+      display: flex;
+      gap: 20px;
+    }
+
+    .benefit-icon {
+      flex-shrink: 0;
+      width: 56px;
+      height: 56px;
+      background: var(--bg-gradient);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.75rem;
+    }
+
+    .benefit-content h4 {
+      margin-bottom: 8px;
+      font-size: 1.125rem;
+    }
+
+    .benefit-content p {
+      font-size: 0.9375rem;
+      color: var(--text-secondary);
+    }
+
+    /* ========================================
+       SOCIAL PROOF
+       ======================================== */
+    .social-proof {
+      background: var(--bg-primary);
+      text-align: center;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: center;
+      gap: 64px;
+      margin-top: 48px;
+      flex-wrap: wrap;
+    }
+
+    .stat {
+      text-align: center;
+    }
+
+    .stat-number {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 800;
+      background: var(--bg-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+
+    .stat-label {
+      color: var(--text-secondary);
+      font-size: 1rem;
+      font-weight: 500;
+    }
+
+    /* ========================================
+       FOOTER
+       ======================================== */
+    footer {
+      background: var(--text-primary);
+      color: rgba(255, 255, 255, 0.8);
+      padding: 48px 0 24px;
+      text-align: center;
+    }
+
+    .footer-content {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    footer h4 {
+      color: #FFFFFF;
+      margin-bottom: 16px;
+    }
+
+    footer p {
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 12px;
+      font-size: 0.9375rem;
+    }
+
+    .footer-divider {
+      height: 1px;
+      background: rgba(255, 255, 255, 0.2);
+      margin: 32px 0 24px;
+    }
+
+    .footer-bottom {
+      font-size: 0.875rem;
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    /* ========================================
+       ANIMAÇÕES
+       ======================================== */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animate-fade-in {
+      animation: fadeInUp 0.6s ease-out;
+    }
+
+    /* ========================================
+       RESPONSIVIDADE
+       ======================================== */
+    @media (max-width: 768px) {
+      .hero {
+        padding: 80px 0 60px;
+      }
+
+      .container {
+        padding: 0 20px;
+      }
+
+      .card {
+        padding: 24px;
+      }
+
+      .cta-group {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .stats {
+        gap: 40px;
+      }
+
+      .category-card {
+        padding: 20px;
+      }
+    }
+
+    /* ========================================
+       ACESSIBILIDADE
+       ======================================== */
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--primary);
+      outline-offset: 2px;
+    }
+  </style>
 </head>
-<body class="antialiased">
 
-    <!-- Seção de Cabeçalho (Header) -->
-    <header class="bg-gray-900 text-white p-4">
-        <div class="container mx-auto flex flex-col sm:flex-row items-center justify-between">
-            <h1 class="text-2xl font-bold mb-2 sm:mb-0">Vicen-tecmaq</h1>
-            <nav class="flex space-x-4">
+<body>
 
-
-               <a href="https://wa.me/5511980375558" 
-       class="flex items-center justify-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-full shadow-lg transition-transform transform hover:scale-105">
-        <!-- Ícone WhatsApp -->
-        <svg xmlns="http://www.w3.org/2000/svg" 
-             class="w-5 h-5 mr-2" 
-             fill="none" 
-             viewBox="0 0 24 24" 
-             stroke="currentColor" 
-             stroke-width="2">
-            <path d="M16.988 13.508c-.28-.14-1.647-.809-1.902-.9-.254-.093-.44-.14-.627.14-.187.28-.72.899-.882 1.087-.16.187-.326.21-.606.07-.28-.14-1.184-.436-2.255-1.393-.833-.743-1.394-1.66-1.554-1.94-.16-.28-.017-.432.122-.572.126-.126.28-.326.42-.487.14-.16.187-.28.28-.466.093-.187.047-.35-.023-.487-.07-.14-.627-1.507-.86-2.066-.226-.54-.456-.467-.627-.475-.162-.007-.35-.009-.536-.009a1.036 1.036 0 00-.747.35c-.26.28-.98.956-.98 2.334s1.003 2.71 1.144 2.897c.14.187 1.975 3.016 4.787 4.23.669.288 1.192.46 1.6.588.672.214 1.285.183 1.77.111.54-.08 1.647-.673 1.879-1.323.233-.65.233-1.207.163-1.323-.07-.116-.254-.187-.534-.327z"/>
-            <path d="M20.52 3.48C18.24 1.2 15.24 0 12 0S5.76 1.2 3.48 3.48C1.2 5.76 0 8.76 0 12c0 2.04.54 4.02 1.56 5.76L0 24l6.36-1.56A11.94 11.94 0 0012 24c3.24 0 6.24-1.2 8.52-3.48C22.8 18.24 24 15.24 24 12c0-3.24-1.2-6.24-3.48-8.52z"/>
-        </svg>
-        Agendar no WhatsApp
-    </a>
-<!--                 <a href="tel:+5511980375558" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-full shadow-lg transition-transform transform hover:scale-105">
-                    Ligar Agora
-                </a> -->
-                <a href="tel:+5511980375558" 
-       class="flex items-center justify-center bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-full shadow-lg transition-transform transform hover:scale-105">
-        <!-- Ícone Telefone -->
-        <svg xmlns="http://www.w3.org/2000/svg" 
-             class="w-5 h-5 mr-2" 
-             fill="none" 
-             viewBox="0 0 24 24" 
-             stroke="currentColor" 
-             stroke-width="2">
-            <path d="M22 16.92v3a2 2 0 01-2.18 2A19.79 19.79 0 013 5.18 2 2 0 015 3h3a2 2 0 012 1.72c.12.81.37 1.6.72 2.33a2 2 0 01-.45 2.18L9.09 10.91a16 16 0 006 6l1.68-1.68a2 2 0 012.18-.45c.73.35 1.52.6 2.33.72A2 2 0 0122 16.92z"/>
-        </svg>
-        Ligar Agora
-    </a>
-            </nav>
+  <!-- ========================================
+       HERO SECTION
+       ======================================== -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content animate-fade-in">
+        <div class="trust-badge">
+          <span>🔒</span>
+          <span>100% Grátis e Sem Compromisso</span>
         </div>
-    </header>
 
-    <!-- Seção de Destaque (Hero) com Imagem -->
-    <main class="container mx-auto px-4 py-8">
-        <section class="bg-white rounded-xl shadow-lg p-6 md:p-10 mb-8">
-            <div class="flex flex-col md:flex-row items-center justify-center space-y-6 md:space-y-0 md:space-x-10">
-                <div class="md:w-1/2 text-center md:text-left">
-                    <h2 class="text-3xl sm:text-4xl font-extrabold text-gray-800 mb-4">
-                        Conserto Rápido de Máquinas e Serviços de Marido de Aluguel
-                    </h2>
-                    <p class="text-lg text-gray-600 mb-6">
-                        Especialista em linha branca e pequenos reparos. Atendimento a domicílio na Baixada Santista.
-                    </p>
-                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center md:justify-start">
-<!--                         <a href="https://wa.me/5513998015286" class="bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-full shadow-lg transition-transform transform hover:scale-105">
-                            Agendar no WhatsApp
-                        </a>-->
-                        <a href="tel:+5511980375558" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-3 px-6 rounded-full shadow-lg transition-transform transform hover:scale-105">
-                            Ligar Agora
-                        </a> 
+        <h1>Sua Máquina de Lavar Quebrou?<br>Descubra o Problema em 5 Minutos</h1>
 
-                      <a href="https://wa.me/5511980375558" 
-       class="flex items-center justify-center bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-6 rounded-full shadow-lg transition-transform transform hover:scale-105">
-        <!-- Ícone WhatsApp -->
-        <svg xmlns="http://www.w3.org/2000/svg" 
-             class="w-5 h-5 mr-2" 
-             fill="none" 
-             viewBox="0 0 24 24" 
-             stroke="currentColor" 
-             stroke-width="2">
-            <path d="M16.988 13.508c-.28-.14-1.647-.809-1.902-.9-.254-.093-.44-.14-.627.14-.187.28-.72.899-.882 1.087-.16.187-.326.21-.606.07-.28-.14-1.184-.436-2.255-1.393-.833-.743-1.394-1.66-1.554-1.94-.16-.28-.017-.432.122-.572.126-.126.28-.326.42-.487.14-.16.187-.28.28-.466.093-.187.047-.35-.023-.487-.07-.14-.627-1.507-.86-2.066-.226-.54-.456-.467-.627-.475-.162-.007-.35-.009-.536-.009a1.036 1.036 0 00-.747.35c-.26.28-.98.956-.98 2.334s1.003 2.71 1.144 2.897c.14.187 1.975 3.016 4.787 4.23.669.288 1.192.46 1.6.588.672.214 1.285.183 1.77.111.54-.08 1.647-.673 1.879-1.323.233-.65.233-1.207.163-1.323-.07-.116-.254-.187-.534-.327z"/>
-            <path d="M20.52 3.48C18.24 1.2 15.24 0 12 0S5.76 1.2 3.48 3.48C1.2 5.76 0 8.76 0 12c0 2.04.54 4.02 1.56 5.76L0 24l6.36-1.56A11.94 11.94 0 0012 24c3.24 0 6.24-1.2 8.52-3.48C22.8 18.24 24 15.24 24 12c0-3.24-1.2-6.24-3.48-8.52z"/>
-        </svg>
-        Agendar no WhatsApp
-    </a>
-                    </div>
-                </div>
-                <div class="md:w-1/2 w-full">
-                    <!-- Placeholder de Imagem para Conserto de Máquina de Lavar -->
-                    <img src="fab.png" alt="Técnico consertando uma máquina de lavar" class="rounded-lg shadow-lg">
-                </div>
-            </div>
-        </section>
+        <p class="hero-subtitle">
+          Diagnóstico <strong>gratuito</strong> e <strong>instantâneo</strong>. Receba a classificação do reparo e
+          orçamento direto no WhatsApp. Simples, rápido e sem burocracia.
+        </p>
 
-        <!-- Seção de Prova Social (Depoimentos) - NOVO -->
-        <section class="bg-white rounded-xl shadow-lg p-6 md:p-10 mb-8 text-center">
-            <h2 class="text-3xl font-bold text-gray-800 mb-6">O que nossos clientes dizem</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Depoimento 1 -->
-                <div class="bg-gray-100 p-6 rounded-lg shadow-md transition-transform transform hover:scale-105">
-                    <p class="text-gray-700 italic mb-4">"Atendimento rápido e super profissional! Minha geladeira parou e ele consertou no mesmo dia. Recomendo de olhos fechados!"</p>
-                    <p class="font-semibold text-gray-900">- Ana P., Itanhaém</p>
-                </div>
-                <!-- Depoimento 2 -->
-                <div class="bg-gray-100 p-6 rounded-lg shadow-md transition-transform transform hover:scale-105">
-                    <p class="text-gray-700 italic mb-4">"Achei o serviço pelo Google e fiquei surpreso com a qualidade. Preço justo e trabalho impecável na minha máquina de lavar."</p>
-                    <p class="font-semibold text-gray-900">- Carlos M., Praia Grande</p>
-                </div>
-                <!-- Depoimento 3 -->
-                <div class="bg-gray-100 p-6 rounded-lg shadow-md transition-transform transform hover:scale-105">
-                    <p class="text-gray-700 italic mb-4">"Precisei de um pequeno reparo elétrico e o atendimento foi excelente. Profissional muito educado e competente."</p>
-                    <p class="font-semibold text-gray-900">- Fernanda S., Mongaguá</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Seção de Detalhes dos Serviços - NOVO -->
-        <section class="bg-white rounded-xl shadow-lg p-6 md:p-10 mb-8">
-            <h2 class="text-3xl font-bold text-gray-800 text-center mb-6">Nossos Serviços</h2>
-            <div class="flex flex-col md:flex-row items-start space-y-8 md:space-y-0 md:space-x-10">
-                <div class="md:w-1/2">
-                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">Conserto de Linha Branca</h3>
-                    <ul class="list-disc list-inside space-y-2 text-gray-700">
-                        <li>Máquinas de Lavar  (Consul, Brastemp, Electrolux)</li>
-                        <li>Manutenção preventiva e corretiva</li>
-                    </ul>
-                </div>
-                <div class="md:w-1/2">
-                    <h3 class="text-2xl font-semibold mb-4 text-gray-800">Pequenos Reparos (Marido de Aluguel)</h3>
-                    <ul class="list-disc list-inside space-y-2 text-gray-700">
-                        <li>Reparos e instalações elétricas (tomadas, lâmpadas, ventiladores de teto)</li>
-                        <li>Reparos e instalações hidráulicas (torneiras, chuveiros, vazamentos)</li>
-                        <li>Montagem de móveis e prateleiras</li>
-                        <li>Instalação de cortinas, varais e quadros</li>
-                        <li>Consertos em geral para sua casa ou escritório</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-    </main>
-
-    <!-- Rodapé (Footer) -->
-    <footer class="bg-gray-900 text-white p-6 text-center">
-        <div class="container mx-auto">
-            <p>&copy; 2024 Vicen-tecmaq. Todos os direitos reservados.</p>
-            <p class="mt-2">Atendimento em Itanhaém, Mongaguá e Praia Grande.</p>
+        <div class="cta-group">
+          <a href="#formulario-diagnostico" class="btn btn-white">
+            <span class="btn-icon">🔧</span>
+            <span>Fazer Diagnóstico Grátis</span>
+          </a>
+          <a href="#como-funciona" class="btn btn-primary">
+            <span>Como Funciona</span>
+          </a>
         </div>
-    </footer>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       MAIN CONTENT
+       ======================================== -->
+  <section class="section">
+    <div class="container">
+      <div class="main-content">
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <div>
+
+          <!-- COMO FUNCIONA -->
+          <div id="como-funciona" class="steps">
+            <h2 style="text-align: center;">Como Funciona? Simples em 3 Passos</h2>
+            <p style="text-align: center; color: var(--text-secondary); max-width: 700px; margin: 0 auto 0;">
+              Não precisa ser técnico. Responda perguntas simples e deixe que a gente cuide do resto.
+            </p>
+
+            <div class="steps-container">
+              <div class="step">
+                <div class="step-number">1</div>
+                <h3 class="step-title">Descreva o Problema</h3>
+                <p class="step-description">
+                  Preencha o formulário rápido sobre o que está acontecendo com sua máquina. Barulho estranho? Não liga?
+                  Vazando água?
+                </p>
+              </div>
+
+              <div class="step">
+                <div class="step-number">2</div>
+                <h3 class="step-title">Escolha a Categoria</h3>
+                <p class="step-description">
+                  Selecione se o problema parece Simples, Intermediário, Complexo ou Urgente com base nas descrições.
+                </p>
+              </div>
+
+              <div class="step">
+                <div class="step-number">3</div>
+                <h3 class="step-title">Receba no WhatsApp</h3>
+                <p class="step-description">
+                  Seus dados são enviados direto para o WhatsApp do técnico. Ele entra em contato rapidamente com
+                  orçamento!
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- CATEGORIAS DE REPARO -->
+          <div id="categorias" style="margin-top: 80px;">
+            <h2 style="text-align: center;">Tipos de Reparo: Entenda Seu Problema</h2>
+            <p style="text-align: center; color: var(--text-secondary); max-width: 700px; margin: 16px auto 0;">
+              Classificamos cada caso para você ter transparência total sobre tempo e custo estimado.
+            </p>
+
+            <div class="categories-grid">
+              <div class="category-card simple" data-category="Simples" onclick="selectCategory('Simples')">
+                <span class="category-icon">🟢</span>
+                <h4 class="category-title">Reparo Simples</h4>
+                <p class="category-description">
+                  Limpeza de filtros, mangueira dobrada, ajustes básicos. Problemas que não exigem peças caras.
+                </p>
+                <span class="category-time">⏱ 30min - 1h | 💰 Econômico</span>
+              </div>
+
+              <div class="category-card intermediate" data-category="Intermediário"
+                onclick="selectCategory('Intermediário')">
+                <span class="category-icon">🟡</span>
+                <h4 class="category-title">Reparo Intermediário</h4>
+                <p class="category-description">
+                  Troca de bomba d'água, válvulas, vedações. Resolvido em poucas horas com peças de reposição.
+                </p>
+                <span class="category-time">⏱ 2-4h | 💰 Moderado</span>
+              </div>
+
+              <div class="category-card complex" data-category="Complexo" onclick="selectCategory('Complexo')">
+                <span class="category-icon">🟠</span>
+                <h4 class="category-title">Reparo Complexo</h4>
+                <p class="category-description">
+                  Motor, placa eletrônica, sistema elétrico. Requer diagnóstico técnico presencial e pode levar 1-2
+                  dias.
+                </p>
+                <span class="category-time">⏱ 1-2 dias | 💰 Alto</span>
+              </div>
+
+              <div class="category-card urgent" data-category="Urgente" onclick="selectCategory('Urgente')">
+                <span class="category-icon">🔴</span>
+                <h4 class="category-title">Atenção Urgente</h4>
+                <p class="category-description">
+                  Curto-circuito, vazamento severo, risco elétrico. Atendimento prioritário para evitar danos maiores.
+                </p>
+                <span class="category-time">⚡ Atendimento Imediato</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- FORMULÁRIO DE DIAGNÓSTICO -->
+          <div id="formulario-diagnostico" style="margin-top: 80px;">
+            <div class="card" style="max-width: 700px; margin: 0 auto;">
+              <h2 style="margin-bottom: 8px;">Solicitar Diagnóstico Grátis</h2>
+              <p style="color: var(--text-secondary); margin-bottom: 32px;">
+                Preencha os dados abaixo e enviaremos seu diagnóstico direto para o WhatsApp do técnico especializado.
+              </p>
+
+              <form id="diagnosticoForm" onsubmit="enviarParaWhatsApp(event)">
+                <div class="form-group">
+                  <label class="form-label" for="nome">
+                    Seu Nome<span class="required">*</span>
+                  </label>
+                  <input type="text" id="nome" name="nome" class="form-input" placeholder="Ex: João Silva" required
+                    minlength="3" />
+                  <span class="form-error" id="nome-error">Por favor, insira seu nome completo.</span>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="telefone">
+                    Seu Telefone/WhatsApp<span class="required">*</span>
+                  </label>
+                  <input type="tel" id="telefone" name="telefone" class="form-input" placeholder="(11) 99999-9999"
+                    required />
+                  <span class="form-hint">Para entrarmos em contato com você</span>
+                  <span class="form-error" id="telefone-error">Por favor, insira um telefone válido.</span>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="categoria">
+                    Tipo de Problema<span class="required">*</span>
+                  </label>
+                  <select id="categoria" name="categoria" class="form-select" required>
+                    <option value="">Selecione a categoria do problema</option>
+                    <option value="Simples">🟢 Simples - Limpeza/Ajustes Básicos</option>
+                    <option value="Intermediário">🟡 Intermediário - Troca de Peças</option>
+                    <option value="Complexo">🟠 Complexo - Motor/Placa</option>
+                    <option value="Urgente">🔴 Urgente - Risco Elétrico</option>
+                  </select>
+                  <span class="form-hint">Clique nas categorias acima para saber mais</span>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="problema">
+                    Descreva o Problema<span class="required">*</span>
+                  </label>
+                  <textarea id="problema" name="problema" class="form-textarea"
+                    placeholder="Ex: A máquina não centrifuga e faz barulho estranho quando liga. Às vezes vaza água pela parte de baixo..."
+                    required minlength="20"></textarea>
+                  <span class="form-hint">Quanto mais detalhes, melhor o diagnóstico!</span>
+                  <span class="form-error" id="problema-error">Descreva o problema com mais detalhes (mínimo 20
+                    caracteres).</span>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="marca">
+                    Marca da Máquina (opcional)
+                  </label>
+                  <input type="text" id="marca" name="marca" class="form-input"
+                    placeholder="Ex: Brastemp, Electrolux, Consul..." />
+                </div>
+
+                <button type="submit" class="btn btn-success" style="width: 100%;">
+                  <span class="btn-icon">📱</span>
+                  <span>Enviar para WhatsApp</span>
+                </button>
+
+                <p style="text-align: center; font-size: 0.875rem; color: var(--text-muted); margin-top: 16px;">
+                  🔒 Seus dados serão enviados diretamente para o WhatsApp do técnico
+                </p>
+              </form>
+            </div>
+          </div>
+
+          <!-- BENEFÍCIOS -->
+          <div class="benefits" style="margin-top: 80px; padding: 60px 0; border-radius: var(--radius);">
+            <h2 style="text-align: center;">Por Que Usar Nosso Diagnóstico?</h2>
+
+            <div class="benefits-grid">
+              <div class="benefit">
+                <div class="benefit-icon">⚡</div>
+                <div class="benefit-content">
+                  <h4>Diagnóstico em 5 Minutos</h4>
+                  <p>Sem esperar dias por um técnico. Saiba agora se vale a pena consertar ou não.</p>
+                </div>
+              </div>
+
+              <div class="benefit">
+                <div class="benefit-icon">💰</div>
+                <div class="benefit-content">
+                  <h4>100% Gratuito</h4>
+                  <p>Zero custo. Você paga apenas se decidir contratar um dos técnicos recomendados.</p>
+                </div>
+              </div>
+
+              <div class="benefit">
+                <div class="benefit-icon">🎯</div>
+                <div class="benefit-content">
+                  <h4>Classificação Precisa</h4>
+                  <p>Sistema inteligente baseado em milhares de reparos. Evite surpresas no orçamento.</p>
+                </div>
+              </div>
+
+              <div class="benefit">
+                <div class="benefit-icon">🔒</div>
+                <div class="benefit-content">
+                  <h4>Privacidade Garantida</h4>
+                  <p>Seus dados são usados apenas para conectar você com técnicos. Sem spam, sem venda de dados.</p>
+                </div>
+              </div>
+
+              <div class="benefit">
+                <div class="benefit-icon">📱</div>
+                <div class="benefit-content">
+                  <h4>Tudo pelo WhatsApp</h4>
+                  <p>Receba orçamento e tire dúvidas direto no WhatsApp. Praticidade total.</p>
+                </div>
+              </div>
+
+              <div class="benefit">
+                <div class="benefit-icon">⭐</div>
+                <div class="benefit-content">
+                  <h4>Técnicos Qualificados</h4>
+                  <p>Conectamos você apenas com profissionais experientes e bem avaliados.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- SIDEBAR CTA (STICKY) -->
+        <aside class="sticky-cta">
+          <div class="cta-card">
+            <h3>Comece Agora!</h3>
+            <p>Preencha o formulário rápido e envie direto pelo WhatsApp.</p>
+
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfnuaA--i-cT-xw1jCER1ZbehXdTfCR5mDWZxTl6RSUdCQypA/viewform?usp=dialog"
+              class="btn btn-white" style="width: 100%; background: #FFFFFF; color: var(--primary);">
+              <span class="btn-icon">🚀</span>
+              <span>Preencher Formulário</span>
+            </a>
+
+            <div class="urgency-text">
+              <span>⏰</span>
+              <span>Resposta em até 5 minutos</span>
+            </div>
+
+            <div class="whatsapp-info">
+              <p><strong>Prefere falar direto?</strong></p>
+              <a href="https://wa.me/5511999999999?text=Olá!%20Preciso%20de%20ajuda%20com%20minha%20máquina%20de%20lavar"
+                class="whatsapp-btn" target="_blank" rel="noopener">
+                <span>💬</span>
+                <span>Falar no WhatsApp</span>
+              </a>
+              <p style="font-size: 0.75rem; margin-top: 12px;">
+              </p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       FOOTER
+       ======================================== -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <h4>🔧 Diagnóstico Rápido</h4>
+        <p>O Doctoralia das Máquinas de Lavar</p>
+        <p>Conectando pessoas a soluções rápidas e confiáveis</p>
+
+        <div class="footer-divider"></div>
+
+        <div class="footer-bottom">
+          © 2024 Diagnóstico Rápido • Desenvolvido por Felipe
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================
+       SCRIPTS
+       ======================================== -->
+  <script>
+    // CONFIGURAÇÃO - SUBSTITUA PELO SEU NÚMERO NO FORMATO: 5511999999999
+    const NUMERO_WHATSAPP = '5519997469206'; // ⚠️ ALTERE AQUI
+
+    // Selecionar categoria ao clicar nos cards
+    function selectCategory(categoria) {
+      // Remove seleção anterior
+      document.querySelectorAll('.category-card').forEach(card => {
+        card.classList.remove('selected');
+      });
+
+      // Adiciona seleção ao card clicado
+      const selectedCard = document.querySelector(`[data-category="${categoria}"]`);
+      if (selectedCard) {
+        selectedCard.classList.add('selected');
+      }
+
+      // Atualiza o select do formulário
+      document.getElementById('categoria').value = categoria;
+
+      // Scroll suave até o formulário
+      document.getElementById('formulario-diagnostico').scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+
+    // Máscara de telefone
+    document.getElementById('telefone').addEventListener('input', function (e) {
+      let value = e.target.value.replace(/\D/g, '');
+      if (value.length <= 11) {
+        value = value.replace(/^(\d{2})(\d)/g, '($1) $2');
+        value = value.replace(/(\d)(\d{4})$/, '$1-$2');
+        e.target.value = value;
+      }
+    });
+
+    // Função para enviar dados para WhatsApp
+    function enviarParaWhatsApp(event) {
+      event.preventDefault();
+
+      // Capturar dados do formulário
+      const nome = document.getElementById('nome').value.trim();
+      const telefone = document.getElementById('telefone').value.trim();
+      const categoria = document.getElementById('categoria').value;
+      const problema = document.getElementById('problema').value.trim();
+      const marca = document.getElementById('marca').value.trim() || 'Não informada';
+
+      // Validação básica
+      if (!nome || nome.length < 3) {
+        alert('Por favor, insira seu nome completo.');
+        document.getElementById('nome').focus();
+        return;
+      }
+
+      if (!telefone || telefone.length < 14) {
+        alert('Por favor, insira um telefone válido.');
+        document.getElementById('telefone').focus();
+        return;
+      }
+
+      if (!categoria) {
+        alert('Por favor, selecione a categoria do problema.');
+        document.getElementById('categoria').focus();
+        return;
+      }
+
+      if (!problema || problema.length < 20) {
+        alert('Por favor, descreva o problema com mais detalhes (mínimo 20 caracteres).');
+        document.getElementById('problema').focus();
+        return;
+      }
+
+      // Formatar mensagem para WhatsApp
+      const mensagem = `
+🔧 *DIAGNÓSTICO RÁPIDO - MÁQUINA DE LAVAR*
+
+*Nome:* ${nome}
+*Telefone:* ${telefone}
+*Categoria:* ${categoria}
+*Marca:* ${marca}
+
+*Problema Descrito:*
+${problema}
+
+---
+_Enviado via Diagnóstico Rápido_
+      `.trim();
+
+      // Codificar mensagem para URL
+      const mensagemCodificada = encodeURIComponent(mensagem);
+
+      // Construir URL do WhatsApp
+      const urlWhatsApp = `https://api.whatsapp.com/send?phone=${NUMERO_WHATSAPP}&text=${mensagemCodificada}`;
+
+      // Abrir WhatsApp em nova aba
+      window.open(urlWhatsApp, '_blank');
+
+      // Opcional: Limpar formulário após envio
+      // document.getElementById('diagnosticoForm').reset();
+
+      // Feedback visual
+      alert('✅ Redirecionando para o WhatsApp! Aguarde o carregamento da conversa.');
+    }
+
+    // Smooth scroll para links internos
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+          });
+        }
+      });
+    });
+  </script>
+
+</body>
+
+</html>
