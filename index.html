@@ -804,7 +804,7 @@
         <div>
 
           <!-- COMO FUNCIONA -->
-          <div id="como-funciona" class="steps">
+          <!-- <div id="como-funciona" class="steps">
             <h2 style="text-align: center;">Como Funciona? Simples em 3 Passos</h2>
             <p style="text-align: center; color: var(--text-secondary); max-width: 700px; margin: 0 auto 0;">
               Não precisa ser técnico. Responda perguntas simples e deixe que a gente cuide do resto.
@@ -886,7 +886,95 @@
               </div>
             </div>
           </div>
+ -->
 
+
+
+
+ <div id="como-funciona" class="steps">
+            <h2 style="text-align: center;">O Processo de Cura da Sua Máquina</h2>
+            <p style="text-align: center; color: var(--text-secondary); max-width: 700px; margin: 0 auto 0;">
+              Um sistema inteligente para identificar e resolver o problema sem complicação.
+            </p>
+
+            <div class="steps-container">
+              <div class="step">
+                <div class="step-number">1</div>
+                <h3 class="step-title">Relate os Sintomas</h3>
+                <p class="step-description">
+                  Conte o que a "paciente" está sentindo. Barulhos, vazamentos ou falhas no funcionamento?
+                </p>
+              </div>
+
+              <div class="step">
+                <div class="step-number">2</div>
+                <h3 class="step-title">Análise Clínica</h3>
+                <p class="step-description">
+                  Nosso sistema classifica a gravidade do problema: Simples, Intermediário ou UTI (Urgente).
+                </p>
+              </div>
+
+              <div class="step">
+                <div class="step-number">3</div>
+                <h3 class="step-title">Diagnóstico e Solução</h3>
+                <p class="step-description">
+                  Receba o laudo completo e o orçamento para o conserto diretamente no seu WhatsApp.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- CATEGORIAS DE REPARO (TRIAGEM) -->
+          <div id="categorias" style="margin-top: 80px;">
+            <h2 style="text-align: center;">Triagem: Qual a Gravidade?</h2>
+            <p style="text-align: center; color: var(--text-secondary); max-width: 700px; margin: 16px auto 0;">
+              Nossa equipe classifica o estado da sua máquina para o tratamento adequado.
+            </p>
+
+            <div class="categories-grid">
+              <div class="category-card simple" data-category="Simples" onclick="selectCategory('Simples')">
+                <span class="category-icon">🩹</span>
+                <h4 class="category-title">Caso Leve</h4>
+                <p class="category-description">
+                  Pequenos ajustes, limpeza de filtros ou objetos presos. "Curativos" rápidos e baratos.
+                </p>
+                <span class="category-time">⏱ 30min - 1h | 💰 Baixo Custo</span>
+              </div>
+
+              <div class="category-card intermediate" data-category="Intermediário"
+                onclick="selectCategory('Intermediário')">
+                <span class="category-icon">💊</span>
+                <h4 class="category-title">Caso Moderado</h4>
+                <p class="category-description">
+                  Troca de peças desgastadas (bombas, válvulas). Requer "medicação" (peças novas).
+                </p>
+                <span class="category-time">⏱ 2-4h | 💰 Custo Médio</span>
+              </div>
+
+              <div class="category-card complex" data-category="Complexo" onclick="selectCategory('Complexo')">
+                <span class="category-icon">🩺</span>
+                <h4 class="category-title">Caso Complexo</h4>
+                <p class="category-description">
+                  Problemas no "coração" (motor) ou "cérebro" (placa). Pode precisar de "cirurgia".
+                </p>
+                <span class="category-time">⏱ 1-2 dias | 💰 Investimento Maior</span>
+              </div>
+
+              <div class="category-card urgent" data-category="Urgente" onclick="selectCategory('Urgente')">
+                <span class="category-icon">🚑</span>
+                <h4 class="category-title">Emergência (UTI)</h4>
+                <p class="category-description">
+                  Curto-circuito, cheiro de queimado ou vazamento grave. Desligue da tomada imediatamente!
+                </p>
+                <span class="category-time">⚡ Atendimento Prioritário</span>
+              </div>
+            </div>
+          </div>
+
+
+
+
+          
           <!-- FORMULÁRIO DE DIAGNÓSTICO -->
           <div id="formulario-diagnostico" style="margin-top: 80px;">
             <div class="card" style="max-width: 700px; margin: 0 auto;">
